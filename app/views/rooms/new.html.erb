@@ -1,0 +1,39 @@
+
+<div>
+  <h2>ROOM情報登録</h2>
+
+  <%= form_with model: @room do |f| %>
+  <div>
+    <%= f.label :room_name, "ROOM名" %>
+    <%= f.text_field :room_name %>
+  </div>
+  <div>
+    <%= f.label :address, "住所" %>
+    <%= f.text_field :address %>
+  </div>
+  <div>
+    <%= f.label :room_introduction, "ROOM紹介" %>
+    <%= f.text_area :room_introduction %>
+  </div>
+  <div>
+    <%= f.label :price, "お一人様一泊" %>
+    <%= f.number_field :price %>
+  </div>
+  <div>
+    <%= f.label :room_img, "ROOM画像" %>
+    <%= f.file_field :room_img %>
+  </div>
+
+  <div>
+    <ul>
+      <li><%= f.submit "登録" %></li>
+    </ul>
+  </div>
+ <% end %>
+ 
+  <div>
+    <ul>
+      <li><%= link_to "プロフィールに戻る", users_show_path %></li>
+    </ul>
+  </div>
+</div>

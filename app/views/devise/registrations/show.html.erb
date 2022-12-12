@@ -1,0 +1,20 @@
+
+<div>
+  <nav>
+    <ul class="user-menu">
+      <li><%= link_to '予約済みROOM', reservations_path, class:'user-nav-list' %></li>
+      <li><%= link_to '登録済みROOM', post_room_rooms_path, class:'user-nav-list' %></li>
+      <li><%= link_to '新規ROOM登録',  new_room_path, class:'user-nav-list' %>
+      <li><%= link_to 'プロフィール', users_show_path, class:'user-nav-list' %></li>
+      <li><%= link_to '設定', edit_user_registration_path, class:'user-nav-list' %></li>
+    </ul>
+  </nav>
+</div>
+
+<div>
+  <h1>プロフィール</h1>
+  <div><%= image_tag(@user.user_img_url, class:'user-img') %></div>
+  <div>名前：<%= @user.name %></div>
+  <div>メールアドレス：<%= @user.email %></div>
+  <div>プロフィール：<%= @user.profile %></div>
+</div>

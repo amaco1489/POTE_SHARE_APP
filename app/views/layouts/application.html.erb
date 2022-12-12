@@ -7,10 +7,32 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <header>
+      <div class="logo-img"><%= link_to image_tag("logo.png"), "/" %></div>
+
+      <nav>
+        <% if user_signed_in? %>
+          <%= "こんにちは #{current_user.name}"  %>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          <%= link_to 'プロフィール', users_show_path %>
+        <% else %>
+          <%= link_to 'ログイン', new_user_session_path, class:"btn btn-primary" %>
+          <%= link_to '登録', new_user_registration_path, class:"btn btn-secondary" %>
+        <% end %>
+      </nav>
+    </header>
+
     <%= yield %>
+
+    <footer>
+      <p>©️ 2020 POTEPAN.INC.</p>
+    </footer>
+
   </body>
 </html>
