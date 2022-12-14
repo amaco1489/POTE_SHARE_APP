@@ -1,0 +1,20 @@
+
+    <nav class="col-lg-2 d-lg-block d-none user-menu">
+      <ul class="navbar list-unstyled flex-column">
+        <li class="nav-item <%= "active" if current_page?(users_show_path) %>"><%= link_to "プロフィール", users_show_path, class:"nav-link" %></li>
+        <li class="nav-item <%= "active" if current_page?(reservations_path) %>"><%= link_to "予約部屋一覧", reservations_path, class:"nav-link" %></li>
+        <li class="nav-item <%= "active" if current_page?(post_room_rooms_path) %>"><%= link_to "登録部屋一覧", post_room_rooms_path, class:"nav-link" %></li>
+        <li class="nav-item <%= "active" if current_page?(new_room_path) %>"><%= link_to "新規部屋登録",  new_room_path, class:"nav-link" %></li>
+        <li class="nav-item <%= "active" if current_page?(edit_user_registration_path) %>"><%= link_to "設定", edit_user_registration_path, class:"nav-link" %></li>
+      </ul>
+    </nav>
+
+    <nav class="col-lg-2 d-lg-none user-menu">
+      <ul class="navbar list-unstyled">
+        <li class="nav-item <%= "active" if current_page?(users_show_path) %>"><%= link_to "プロフィール", users_show_path, class:"nav-link" %></li>
+        <li class="nav-item <%= "active" if current_page?(reservations_path) %>"><%= link_to "予約部屋一覧", reservations_path, class:"nav-link" %></li>
+        <li class="nav-item <%= "active" if current_page?(post_room_rooms_path) %>"><%= link_to "登録部屋一覧", post_room_rooms_path, class:"nav-link" %></li>
+        <li class="nav-item <%= "active" if current_page?(new_room_path) %>"><%= link_to "新規部屋登録",  new_room_path, class:"nav-link" %></li>
+        <li class="nav-item <%= "active" if current_page?(edit_user_registration_path) %>"><%= link_to "設定", edit_user_registration_path, class:"nav-link" %></li>
+      </ul>
+    </nav>

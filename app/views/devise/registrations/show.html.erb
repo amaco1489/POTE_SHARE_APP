@@ -1,25 +1,16 @@
 
 <div class="container-field">
   <div class="row">
-    <div>
-  <nav>
-    <ul class="navbar-brand">
-      <li class="nav-item"><%= link_to '予約済みROOM', reservations_path, class:"nav-link" %></li>
-      <li class="nav-item"><%= link_to '登録済みROOM', post_room_rooms_path, class:"nav-link" %></li>
-      <li class="nav-item"><%= link_to '新規ROOM登録',  new_room_path, class:"nav-link" %>
-      <li class="nav-item"><%= link_to 'プロフィール', users_show_path, class:"nav-link" %></li>
-      <li class="nav-item"><%= link_to '設定', edit_user_registration_path, class:"nav-link" %></li>
-    </ul>
-  </nav>
-</div>
 
-<div>
-  <h1>プロフィール</h1>
-  <div><%= image_tag(@user.user_img_url, class:'user-img') %></div>
-  <div>名前：<%= @user.name %></div>
-  <div>メールアドレス：<%= @user.email %></div>
-  <div>プロフィール：<%= @user.profile %></div>
-</div>
+    <%= render "devise/shared/user_nav" %>
 
-</div>
+      <div class="col-lg-8">
+        <h1>プロフィール</h1>
+        <div><%= image_tag(@user.user_img_url, class:"user-img") %></div>
+        <div>名前：<%= @user.name %></div>
+        <div>メールアドレス：<%= @user.email %></div>
+        <div>プロフィール：<%= @user.profile %></div>
+      </div>
+
+    </div>
 </div>
