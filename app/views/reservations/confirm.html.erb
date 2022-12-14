@@ -1,0 +1,53 @@
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="reservation-confirm mt-3">
+        <h4 class="p-3">予約内容確認</h4>
+        <div>
+          お部屋名<br/>
+          <%= @reservation.room.room_name %>
+        </div>
+        <div>
+          チェックイン<br/>
+          <input type="text" class="form-control" value="<%= @reservation.check_in %>">
+        </div>
+        <div>
+          チェックアウト<br/>
+          <input type="text" class="form-control" value="<%= @reservation.check_out %>">
+        </div>
+        <div>
+          宿泊人数<br/>
+          <input type="text" class="form-control" value="<%= @reservation.total_gests %> 人">
+        <div>
+          宿泊日数<br/>
+          <%= @reservation.total_days %> 日
+        </div>
+        <div>
+          一泊あたり<br/>
+          ¥ <%= @reservation.room.price %>
+        </div>
+        <div>
+          合計金額<br/>
+          <input type="text" class="form-control" value="¥ <%= @reservation.total_price %>">
+        </div>
+        <div>
+          上記内容でよろしければ「予約を確定」を押してください
+        </div>
+  
+      <%= form_with model: @reservation, local: true do |f| %>
+          <%= f.hidden_field :check_in %>
+          <%= f.hidden_field :check_out %>
+          <%= f.hidden_field :total_gests %>
+          <%= f.hidden_field :total_price %>
+          <%= f.hidden_field :room_id %>
+          <%= f.hidden_field :id %>
+          <%= f.submit '確定する', class:"btn btn-primary mt-3" %>
+      <% end %>
+  
+      <%= button_to '入力画面に戻る', :back, class:"btn btn-secondary mt-3" %>
+    
+      </div>
+    </div>
+  </div>
+</div>

@@ -61,3 +61,4 @@ gem 'devise-i18n-views'
 gem "net-smtp"
 gem 'pry-rails'
 gem 'carrierwave'
+gem 'rails-i18n'

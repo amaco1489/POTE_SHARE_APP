@@ -16,6 +16,16 @@
     <header>
       <div class="logo-img"><%= link_to image_tag("logo.png"), "/" %></div>
 
+      <%= form_with url:area_search_rooms_path, local: true, method: :get do |f| %>
+        <%= f.text_field :keyword, placeholder: "エリア" %>
+        <%= f.submit "検索" %>
+      <% end %>
+
+      <%= form_with url:search_rooms_path, local: true, method: :get do |f| %>
+        <%= f.text_field :keyword, placeholder: "キーワード" %>
+        <%= f.submit "検索" %>
+      <% end %>
+
       <nav>
         <% if user_signed_in? %>
           <%= "こんにちは #{current_user.name}"  %>

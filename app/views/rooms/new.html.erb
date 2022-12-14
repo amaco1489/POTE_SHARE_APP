@@ -1,39 +1,44 @@
 
-<div>
-  <h2>ROOM情報登録</h2>
 
+<div class='container'>
+  <h2>ルーム登録</h2>
+  
   <%= form_with model: @room do |f| %>
-  <div>
-    <%= f.label :room_name, "ROOM名" %>
-    <%= f.text_field :room_name %>
-  </div>
-  <div>
-    <%= f.label :address, "住所" %>
-    <%= f.text_field :address %>
-  </div>
-  <div>
-    <%= f.label :room_introduction, "ROOM紹介" %>
-    <%= f.text_area :room_introduction %>
-  </div>
-  <div>
-    <%= f.label :price, "お一人様一泊" %>
-    <%= f.number_field :price %>
-  </div>
-  <div>
-    <%= f.label :room_img, "ROOM画像" %>
-    <%= f.file_field :room_img %>
-  </div>
-
-  <div>
-    <ul>
-      <li><%= f.submit "登録" %></li>
-    </ul>
-  </div>
- <% end %>
- 
-  <div>
-    <ul>
-      <li><%= link_to "プロフィールに戻る", users_show_path %></li>
-    </ul>
-  </div>
-</div>
+    <table>
+      <tr>
+        <th><%= f.label :room_name, "ROOM名" %></th>
+        <td><%= f.text_field :room_name %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :address, "住所" %></th>
+        <td><%= f.text_field :address %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :room_introduction, "ROOM紹介" %></th>
+        <td><%= f.text_area :room_introduction %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :price, "お一人様一泊" %></th>
+        <td><%= f.number_field :price %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :room_img, "ROOM画像" %></th>
+        <td><%= f.file_field :room_img %></td>
+      </tr>
+     </table>
+     
+     <div>
+       <ul>
+         <li><%= f.submit "ROOM登録" %></li>
+       </ul>
+     </div>
+   <% end %>
+   
+   <div>
+     <ul>
+       <li><%= link_to "プロフィールに戻る", users_show_path %></li>
+     </ul>
+   </div>
+   </div>
+  
+  
