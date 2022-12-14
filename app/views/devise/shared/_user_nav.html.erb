@@ -1,5 +1,5 @@
 
-    <nav class="col-lg-2 d-lg-block d-none user-menu">
+    <nav class="col-lg-2 d-lg-block d-none user-nav-lg">
       <ul class="navbar list-unstyled flex-column">
         <li class="nav-item <%= "active" if current_page?(users_show_path) %>"><%= link_to "プロフィール", users_show_path, class:"nav-link" %></li>
         <li class="nav-item <%= "active" if current_page?(reservations_path) %>"><%= link_to "予約部屋一覧", reservations_path, class:"nav-link" %></li>
@@ -9,7 +9,7 @@
       </ul>
     </nav>
 
-    <nav class="col-lg-2 d-lg-none user-menu">
+    <nav class="col-lg-2 d-lg-none user-nav-md">
       <ul class="navbar list-unstyled">
         <li class="nav-item <%= "active" if current_page?(users_show_path) %>"><%= link_to "プロフィール", users_show_path, class:"nav-link" %></li>
         <li class="nav-item <%= "active" if current_page?(reservations_path) %>"><%= link_to "予約部屋一覧", reservations_path, class:"nav-link" %></li>

@@ -1,16 +1,23 @@
 
 <div class="container-field">
-  <div class="row">
+  <div class="row gx-0">
 
     <%= render "devise/shared/user_nav" %>
 
-      <div class="col-lg-8">
-        <h1>プロフィール</h1>
-        <div><%= image_tag(@user.user_img_url, class:"user-img") %></div>
-        <div>名前：<%= @user.name %></div>
-        <div>メールアドレス：<%= @user.email %></div>
-        <div>プロフィール：<%= @user.profile %></div>
-      </div>
+    <div class="col-lg-10 bg-secondary bg-opacity-10">
 
+      <div class="row mx-auto gx-0 m-3 user-show">
+      
+        <h4>プロフィール</h4>
+        <div><%= image_tag(@user.user_img_url, class:"user-img") %></div>
+        <div class="col-4">名前</div>
+        <div class="col-8"><%= @user.name %></div>
+        <div class="col-4">メールアドレス</div>
+        <div class="col-8"><%= @user.email %></div>
+        <div class="col-4">プロフィール</div>
+        <div class="col-8"><%= @user.profile %></div>
+
+      </div>
     </div>
+  </div>
 </div>
