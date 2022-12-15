@@ -1,21 +1,21 @@
 
 <div class="container">
-  <div class="session mx-auto">
+  <div class="device mx-auto">
 
-    <h5>ログイン</h5>
+    <h6>ログイン</h6>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
     <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class:"session-form" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class:"device-form" %>
     </div>
     <div class="field">
-      <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class:"session-form" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class:"device-form" %>
     </div>
     <div class="actions mt-3">
       <%= f.submit "ログイン", class:"btn btn-primary" %>
     </div>
     <% end %>
-    <div class="new-account mt-3">
+    <div class="sign_in_up mt-3">
       <%= link_to "新しいアカウントを作成", new_user_registration_path, class:"text-decoration-none" %>
     </div>
     

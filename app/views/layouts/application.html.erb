@@ -30,7 +30,7 @@
         <% if user_signed_in? %>
           <%= "こんにちは #{current_user.name}"  %>
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-          <%= link_to 'プロフィール', users_show_path %>
+          <%= link_to 'プロフィール', users_show_path, class:"btn btn-link" %>
         <% else %>
           <%= link_to 'ログイン', new_user_session_path, class:"btn btn-primary" %>
           <%= link_to '登録', new_user_registration_path, class:"btn btn-secondary" %>
