@@ -36,6 +36,7 @@ footer p {
 .btn-primary, .btn-secondary {
   opacity: 0.75;
   width: 100%;
+  margin-top: 1.5em;
 }
 
 label {
@@ -46,13 +47,13 @@ label {
 // common
 
 
-.reservation-confirm, .reservation-show {
+.reservation-confirm, .reservation-show .user-edit {
   border: 1px solid #ced4da;
   border-radius: 5px;
   padding: 40px 30px;
 }
 
-.reservation-confirm div, h4, .user-show div {
+.reservation-confirm div, h4, .user-show div, .user-edit .row {
   border-bottom: 1px solid #eaedef;
   padding: 15px 0;
   line-height: 2;
@@ -67,7 +68,7 @@ label {
   border-radius: 50%;
 }
 
-.user-show {
+.user-show, .user-edit {
   background-color: #fff;
   max-width: 880px;
   border: 1px solid #ced4da;
@@ -303,5 +304,4 @@ label {
   padding: 1em;
 }
 
-// reservation.confirm
 
