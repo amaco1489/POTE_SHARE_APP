@@ -9,6 +9,12 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  
+  
   </head>
 
   <body>
@@ -28,9 +34,25 @@
 
       <nav>
         <% if user_signed_in? %>
-          <%= "こんにちは #{current_user.name}"  %>
+          <%= current_user.name %>
+          <div class="dropdown">
+            <a class="dropdown-toggle" id="btnOpenMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" >
+              <%= image_tag(current_user.user_img_url, class:"user-img", alt:"owner") %>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownmenulink">
+              <li><%= link_to "プロフィール", users_show_path, class:"dropdown-item" %></li>
+              <li><%= link_to "予約済みルーム", reservations_path, class:"dropdown-item" %></li>
+              <li><%= link_to "登録済みルーム", post_room_rooms_path, class:"dropdown-item" %></li>
+              <li><%= link_to "新規ルーム登録",  new_room_path, class:"dropdown-item" %></li>
+              <li><%= link_to "設定", edit_user_registration_path, class:"dropdown-item" %></li>
+              <li><%= link_to "TOP", root_path, class:"dropdown-item" %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
+            </ul>
+          </div>
+
+<!-- 
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-          <%= link_to 'プロフィール', users_show_path, class:"btn btn-link" %>
+          <%= link_to 'プロフィール', users_show_path, class:"btn btn-link" %> -->
         <% else %>
           <%= link_to 'ログイン', new_user_session_path, class:"btn btn-primary" %>
           <%= link_to '登録', new_user_registration_path, class:"btn btn-secondary" %>
