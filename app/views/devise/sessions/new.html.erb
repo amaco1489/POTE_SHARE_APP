@@ -11,11 +11,11 @@
     <div class="field">
       <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class:"device-form" %>
     </div>
-    <div class="actions mt-3">
+    <div class="actions">
       <%= f.submit "ログイン", class:"btn btn-primary" %>
     </div>
     <% end %>
-    <div class="sign_in_up">
+    <div class="sign_in_up mt-3">
       <%= link_to "新しいアカウントを作成", new_user_registration_path, class:"text-decoration-none" %>
     </div>
     

@@ -6,8 +6,12 @@
 
     <div class="col-lg-10 bg-secondary bg-opacity-10">
 
-      <div class="row mx-auto gx-0 m-3 user-show">
-      
+      <div class="row gx-0 m-3 user-show" >
+
+        <% if flash[:notice].present? %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+
         <h4>プロフィール</h4>
         <div><%= image_tag(@user.user_img_url, class:"user-img") %></div>
         <div class="col-4">名前</div>

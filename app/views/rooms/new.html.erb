@@ -1,50 +1,47 @@
 
-
 <div class="container-field">
-  <div class="row">
+  <div class="row gx-0">
 
-<%= render "devise/shared/user_nav" %>
+    <%= render "devise/shared/user_nav" %>
 
-<div class="col-lg-8">
+    <div class="col-lg-10 bg-secondary bg-opacity-10">
 
-  <h2>ルーム登録</h2>
+      <div class="row new-room gx-0 m-3">
+
+        <%= render "shared/error", obj: @room %>
+
+        <h4>ルーム登録</h4>
   
-  <%= form_with model: @room do |f| %>
-    <table>
-      <tr>
-        <th><%= f.label :room_name, "ROOM名" %></th>
-        <td><%= f.text_field :room_name %></td>
-      </tr>
-      <tr>
-        <th><%= f.label :address, "住所" %></th>
-        <td><%= f.text_field :address %></td>
-      </tr>
-      <tr>
-        <th><%= f.label :room_introduction, "ROOM紹介" %></th>
-        <td><%= f.text_area :room_introduction %></td>
-      </tr>
-      <tr>
-        <th><%= f.label :price, "お一人様一泊" %></th>
-        <td><%= f.number_field :price %></td>
-      </tr>
-      <tr>
-        <th><%= f.label :room_img, "ROOM画像" %></th>
-        <td><%= f.file_field :room_img %></td>
-      </tr>
-     </table>
-     
-     <div>
-       <ul>
-         <li><%= f.submit "ROOM登録" %></li>
-       </ul>
-     </div>
-   <% end %>
-   
-   <div>
-     <ul>
-       <li><%= link_to "プロフィールに戻る", users_show_path %></li>
-     </ul>
-   </div>
-   </div>
-  
+        <%= form_with model: @room do |f| %>
+          <table>
+            <tr>
+              <th><%= f.label :room_name, "ルーム名" %></th>
+              <td><%= f.text_field :room_name, class:"room-form" %></td>
+            </tr>
+            <tr>
+              <th><%= f.label :room_introduction, "ルーム紹介" %></th>
+              <td><%= f.text_area :room_introduction, class:"room-form" %></td>
+            </tr>
+            <tr>
+              <th><%= f.label :address, "住所" %></th>
+              <td><%= f.text_field :address, class:"room-form" %></td>
+            </tr>
+            <tr>
+              <th><%= f.label :room_img, "ルーム画像" %></th>
+              <td><%= f.file_field :room_img %></td>
+            </tr>
+            <tr>
+              <th><%= f.label :price, "一泊あたりの料金" %></th>
+              <td><%= f.number_field :price, class:"room-form" %></td>
+            </tr>
+          </table>
+
+          <div>
+            <%= f.submit "登録する", class:"btn btn-primary mt-3" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
   

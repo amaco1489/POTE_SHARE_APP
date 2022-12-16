@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
   def create
     @room = current_user.rooms.new(room_params)
     if @room.save
-      flash[:notice] = "Roomを登録しました"
+      flash[:notice] = "ルームを登録しました"
       redirect_to post_room_rooms_path
     else
       render "new"

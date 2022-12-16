@@ -1,44 +1,42 @@
 
-
 <div class="container-field">
-  <div class="row">
+  <div class="row gx-0">
 
-<%= render "devise/shared/user_nav" %>
+    <%= render "devise/shared/user_nav" %>
 
-<div class="col-lg-8">
+    <div class="col-lg-10 bg-secondary bg-opacity-10">
 
-  <%= flash[:notice] %>
+      <div class="post-room gx-0 m-3">
 
-    <h2>登録済みROOM一覧</h2>
-  
-    <div>
-   
-    <table>
-      <thead>
-        <tr>
-          <th>ルーム画像</th>
-          <th>ルーム名</th>
-          <th>ルーム紹介</th>
-          <th>一泊</th>
-          <th>登録日時</th>
-        </tr>
-      </thead>
-  
-      <tbody>
-        <% @room.each do |room| %>
-        <tr>
-          <td><%= image_tag(room.room_img_url, class:'room-img') %></td>
-          <td><%= room.room_name %></td>
-          <td><%= room.room_introduction %></td>
-          <td><%= room.price %></td>
-          <td><%= room.created_at %></td>
-        </tr>
+        <% if flash[:notice].present? %>
+          <p class="notice"><%= notice %></p>
         <% end %>
-      </tbody>
+        
+        <h4>登録済みルーム一覧</h4>
   
-    </table>
+        <table>
+          <thead>
+            <tr>
+              <th>ルーム画像</th>
+              <th>ルーム名</th>
+              <th>一泊あたり</th>
+              <th>登録日時</th>
+            </tr>
+          </thead>
   
+          <tbody>
+            <% @room.each do |room| %>
+            <tr>
+              <td><%= image_tag(room.room_img_url, class:"room-img") %></td>
+              <td><%= room.room_name %></td>
+              <td>¥ <%= room.price %></td>
+              <td><%= room.created_at.to_s(:datetime_jp) %></td>
+            </tr>
+            <% end %>
+          </tbody>
+  
+        </table>
+      </div>
     </div>
-    
-
-  
+  </div>
+</div>

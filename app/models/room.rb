@@ -13,4 +13,13 @@ class Room < ApplicationRecord
     validates :room_img
   end
 
+  validate :min_price
+
+  def min_price
+    if price.to_i < 1000
+      return if price.blank?
+      errors.add :price, "は￥１０００以上にしてください"
+    end
+  end
+
 end

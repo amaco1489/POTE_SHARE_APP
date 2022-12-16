@@ -1,36 +1,39 @@
 
 <div class="container-field">
-  <div class="row">
-    
+  <div class="row gx-0">
+
     <%= render "devise/shared/user_nav" %>
 
-    <div class="col-lg-8">
+    <div class="col-lg-10 bg-secondary bg-opacity-10">
 
-      <h1>予約済みROOM一覧</h1>
-      <div class='reservation'>
+      <div class="reservation-room gx-0 m-3">
+
+        <!-- <%= flash[:notice] %> -->
+
+        <h4>予約済みルーム一覧</h4>
    
         <table>
+
           <thead>
             <tr>
               <th>ルーム画像</th>
               <th>ルーム名</th>
-              <th>ルーム紹介</th>
               <th>合計金額</th>
-              <th>開始日</th>
-              <th>終了日</th>
+              <th>チェックイン</th>
+              <th>チェックアウト</th>
               <th>予約確定日時</th>
             </tr>
           </thead>
+
           <tbody >
             <% @reservations.each do |reservation| %>
             <tr>
-              <td><%= image_tag(reservation.room.room_img_url, class:'room-img') %></td>
+              <td><%= image_tag(reservation.room.room_img_url, class:"room-img") %></td>
               <td><%= reservation.room.room_name %></td>
-              <td><%= reservation.room.room_introduction %></td>
               <td>¥<%= reservation.total_price %></td>
               <td><%= reservation.check_in %></td>
               <td><%= reservation.check_out %></td>
-              <td><%= reservation.created_at %></td>
+              <td><%= reservation.created_at.to_s(:datetime_jp) %></td>
             </tr>
             <% end %>
           </tbody>
