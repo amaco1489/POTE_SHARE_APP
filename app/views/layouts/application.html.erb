@@ -46,7 +46,7 @@
             <div class="d-flex align-items-center">
               <%= "#{current_user.name} さん" %>            
               <div class="dropdown">
-                <a class="dropdown-toggle" id="btnOpenMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" >
+                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" >
                   <%= image_tag(current_user.user_img_url, class:"user-img", alt:"owner") %>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="dropdownmenulink">
@@ -61,8 +61,10 @@
               </div>
             </div>
           <% else %>
-            <%= link_to 'ログイン', new_user_session_path, class:"btn btn-primary" %>
-            <%= link_to '登録', new_user_registration_path, class:"btn btn-secondary" %>
+            <div class="d-grid gap-2 d-flex justify-content-end">
+              <%= link_to 'ログイン', new_user_session_path, class:"btn btn-primary" %>
+              <%= link_to '登録', new_user_registration_path, class:"btn btn-secondary" %>
+            </div>
           <% end %>
         </nav>
       </div>

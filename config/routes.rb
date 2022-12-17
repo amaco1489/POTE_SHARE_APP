@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     sessions: "users/sessions",
   }
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   devise_scope :user do
     get "users/show", to: "users/registrations#show"
@@ -13,7 +12,7 @@ Rails.application.routes.draw do
   root 'top#index'
   get 'top/index'
 
-  resources :reservations , only: [:index, :new, :create, :show] do
+  resources :reservations, only: [:index, :new, :create, :show] do
     collection do
       post "confirm"
     end

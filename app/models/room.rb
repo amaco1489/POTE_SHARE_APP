@@ -16,9 +16,9 @@ class Room < ApplicationRecord
   validate :min_price
 
   def min_price
-    if price.to_i < 1000
+    if price.to_i < 1
       return if price.blank?
-      errors.add :price, "は￥１０００以上にしてください"
+      errors.add :price, "は無料には出来ません"
     end
   end
 

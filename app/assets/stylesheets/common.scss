@@ -1,16 +1,11 @@
 
-// app
+// -----   app   -----
 
 body{
-  position: relative;
   margin: 0;
   box-sizing: border-box;
   color: #3333;
   letter-spacing: 0.05em;
-}
-
-h2, h3, h4, h5, h6 {
-  margin-bottom: 0!important;
 }
 
 header {
@@ -36,12 +31,18 @@ header {
   margin: 7px 0 0 7px;
 }
 
-
 header .user-img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-left: 10px;
+}
+
+header .btn {
+  opacity: 1!important;
+  width: 100px!important;
+  font-size: 15px;
+  margin: 0!important;
 }
 
 footer {
@@ -59,6 +60,20 @@ footer p {
   margin: auto;
 }
 
+
+// -----   common   -----
+
+
+h2, h3, h4, h5, h6 {
+  margin-bottom: 0!important;
+}
+
+.notice {
+  background-color: #d5eadb;
+  color: rgb(83, 110, 83);
+  text-align: center;
+}
+
 .btn-primary, .btn-secondary {
   opacity: 0.75;
   width: 100%;
@@ -70,7 +85,8 @@ label {
   line-height: 20px
 }
 
-// common
+
+// -----   current_user_menu   -----
 
 
 .reservation-confirm, .reservation-show, .user-edit, .post-room, .reservation-room, .new-room {
@@ -78,19 +94,10 @@ label {
   padding: 40px 30px;
 }
 
-.reservation-confirm div, .reservation-show div, h4, .user-show div, .user-edit .row {
+h4, .reservation-confirm div, .reservation-show div, .user-show div, .user-edit .row {
   border-bottom: 1px solid #eaedef;
   padding: 15px 0;
   line-height: 2;
-}
-
-
-// user
-
-.user-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
 }
 
 .user-show, .user-edit, .new-room {
@@ -99,249 +106,16 @@ label {
   border: 1px solid #ced4da;
   padding: 10px 50px;
 }
+
+.user-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
 .user-edit .user-img {
   margin: 15px 0;
 }
-
-// device
-
-.device {
-  max-width: 500px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  padding: 50px 80px;
-  margin: 50px;
-}
-
-.device-form {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  margin: 0.5em 0;
-  padding: 1em;
-}
-
-
-
-.field::before {
-  content: "必須";
-  color: #fff;
-  background-color: #ff0000a8;
-  font-size: 12px;
-  border-radius: 5px;
-  padding: 4px;
-  margin-bottom: 1em;
-}
-
-.sign_in_up, h6 {
-  text-align: center;
-}
-
-// nav
-
-.user-nav-lg {
-  height: 100vh;
-  padding: 15px;
-  border-right: 3px solid #ced4da;
-
-}
-
-.user-nav-lg .nav-item {
-  width: 100%;
-  font-size: 18px;
-  padding: 12px 5px;
-  text-align: center;
-}
-
-.user-nav-lg .active {
-  color: #4a90e2;
-  border-right: 5px solid #4a90e2;
-}
-
-.user-nav-md {
-  width: 100%;
-  font-size: 15px;
-  padding: 12px 5px 0;
-  border-bottom: 2px solid #ced4da;
-  line-height: 30px;
-}
-
-.user-nav-md .nav-item {
-  margin: auto;
-}
-
-.user-nav-md .active {
-  color: #4a90e2;
-  border-bottom: 3px solid #4a90e2;
-}
-
-
-// top
-
-.top {
-  width: 100%;
-  height: 650px;
-  background-image: image-url("img_cover_top.jpg");
-  background-size: cover;
-  margin: 0;
-}
-
-.search-area {
-  background: #fff;
-  padding: 30px!important;
-  border-radius: 5px;
-  margin: auto;
-}
-
-.search-area h3 {
-  font-size: 30px;
-  line-height: 35px;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-}
-
-.search-form {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-}
-
-.panel {
-  position: relative;
-  padding: 15px;
-}
-
-.panel span {
-  position: absolute;
-  bottom: 50px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 24px;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
-.panel_img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 25px;
-}
-
-// room.index
-
-.room-index {
-  padding: 30px 50px;
-}
-
-.room-box {
-  border: 1px solid #e2e2e2;
-  height: 320px;
-  margin: 10px;
-  padding-top: 10px;
-}
-
-.room-box-link {
-  text-decoration: none;
-}
-
-
-.room-img {
-  width: 100%;
-  height: 180px;
-}
-
-.room-title-box {
-  padding: 10px;
-}
-
-.room-index-name {
-  font-size: 18px;
-  font-weight: bold;
-  color: #909090;
-  text-decoration: none;
-}
-
-
-.room-index-address {
-  font-size: 16px;
-  font-weight: bold;
-  color: #111;
-  margin: 10px 0;
-}
-
-.room-index-price {
-  font-size: 16px;
-  text-align: right;
-  color: #111;
-  letter-spacing: 1px;
-}
-
-// room.show
-
-.room_show {
-  padding: 30px;
-}
-
-.room_show .row {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.room-large-img {
-  width: 100%;
-}
-
-.room-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid #eaedef;
-}
-
-.room-name {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.address {
-  padding: 20px;
-  border-bottom: 1px solid #eaedef;
-}
-
-.room-introduction {
-  padding: 20px;
-  border-bottom: 1px solid #eaedef;
-}
-
-.room-show-form{
-  padding: 20px;
-  border: 1px solid #eaedef;
-  border-radius: 5px;
-}
-
-.reservation-form {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  margin: 0.5em 0;
-  padding: 1em;
-}
-
-.room-form {
-  width: 60%;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  margin: 0.5em 0;
-}
-
-// user menu
 
 .post-room, .reservation-room {
   background-color: #fff;
@@ -379,8 +153,41 @@ tbody td {
   padding: 10px;
 }
 
-.notice {
-  background-color: #d5eadb;
-  color: rgb(83, 110, 83);
+
+// -----   nav   -----
+
+
+.user-nav-lg {
+  height: 100vh;
+  padding: 15px;
+  border-right: 3px solid #ced4da;
+}
+
+.user-nav-lg .nav-item {
+  width: 100%;
+  font-size: 18px;
+  padding: 12px 5px;
   text-align: center;
+}
+
+.user-nav-lg .active {
+  color: #4a90e2;
+  border-right: 5px solid #4a90e2;
+}
+
+.user-nav-md {
+  width: 100%;
+  font-size: 15px;
+  padding: 12px 5px 0;
+  border-bottom: 2px solid #ced4da;
+  line-height: 30px;
+}
+
+.user-nav-md .nav-item {
+  margin: auto;
+}
+
+.user-nav-md .active {
+  color: #4a90e2;
+  border-bottom: 3px solid #4a90e2;
 }

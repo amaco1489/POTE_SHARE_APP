@@ -2,18 +2,15 @@
 <div class="container-field">
   <div class="row gx-0">
 
+    <!-- ナビゲーションメニュー -->
     <%= render "devise/shared/user_nav" %>
 
     <div class="col-lg-10 bg-secondary bg-opacity-10">
-
       <div class="reservation-room gx-0 m-3">
-
-        <!-- <%= flash[:notice] %> -->
 
         <h4>予約済みルーム一覧</h4>
    
         <table>
-
           <thead>
             <tr>
               <th>ルーム画像</th>
@@ -24,17 +21,16 @@
               <th>予約確定日時</th>
             </tr>
           </thead>
-
           <tbody >
             <% @reservations.each do |reservation| %>
-            <tr>
-              <td><%= link_to image_tag(reservation.room.room_img_url, class:"room-img"), room_path(reservation.room) %></td>
-              <td><%= link_to (reservation.room.room_name), room_path(reservation.room) %></td>
-              <td>¥ <%= reservation.total_price %></td>
-              <td><%= reservation.check_in %></td>
-              <td><%= reservation.check_out %></td>
-              <td><%= reservation.created_at.to_s(:datetime_jp) %></td>
-            </tr>
+              <tr>
+                <td><%= link_to image_tag(reservation.room.room_img_url, class:"room-img"), room_path(reservation.room) %></td>
+                <td><%= link_to (reservation.room.room_name), room_path(reservation.room) %></td>
+                <td>¥ <%= reservation.total_price %></td>
+                <td><%= reservation.check_in %></td>
+                <td><%= reservation.check_out %></td>
+                <td><%= reservation.created_at.to_s(:datetime_jp) %></td>
+              </tr>
             <% end %>
           </tbody>
         </table>

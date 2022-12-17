@@ -2,11 +2,15 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
-      <%= render "shared/flash_message" %> 
+
+      <!-- フラッシュメッセージ -->
+      <p class="notice"><%= notice %></p>
+
       <div class="reservation-show mt-3 mb-3">
+
         <h4 class="p-3">ご予約内容</h4>
         <div>
-          お部屋名<br/>
+          ルーム名<br/>
           <%= @reservation.room.room_name %>
         </div>
         <div>
@@ -24,6 +28,7 @@
         <div>予約が完了しました</div>
         <%= link_to '予約済み部屋一覧へ', reservations_path, class:"btn btn-primary mt-3" %>
         <%= link_to 'TOPへ戻る', root_path, class:"btn btn-secondary mt-3"  %>
+        
       </div>
     </div>
   </div>

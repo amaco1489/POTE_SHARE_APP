@@ -2,16 +2,16 @@
 <div class="container-field">
   <div class="row gx-0">
 
+    <!-- ナビゲーションメニュー -->
     <%= render "devise/shared/user_nav" %>
 
     <div class="col-lg-10 bg-secondary bg-opacity-10">
-
       <div class="row new-room gx-0 m-3">
 
+        <!-- エラーメッセージ -->
         <%= render "shared/error", obj: @room %>
 
         <h4>ルーム登録</h4>
-  
         <%= form_with model: @room do |f| %>
           <table>
             <tr>
@@ -35,13 +35,12 @@
               <td><%= f.number_field :price, class:"room-form" %></td>
             </tr>
           </table>
-
           <div>
             <%= f.submit "登録する", class:"btn btn-primary mt-3" %>
           </div>
         <% end %>
+
       </div>
     </div>
   </div>
 </div>
-  

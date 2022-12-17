@@ -1,14 +1,11 @@
 
-<div class="container room_show">
-
+<div class="container room-show">
   <div class="row">
 
     <div class="col-md-8">
       <div><%= image_tag(@room.room_img_url, class:"room-large-img", alt:"room_img") %></div>
       <div class="room-title">
-        <div>
-          <%= image_tag(@user.user_img_url, class:"user-img", alt:"owner") %>
-        </div>
+        <%= image_tag(@user.user_img_url, class:"user-img", alt:"owner_img") %>
         <div class="room-name"><%= @room.room_name %></div>
       </div>
       <div class="address"><%= @room.address %></div>
@@ -18,16 +15,17 @@
     <div class="reservation-box col-md-4">
       <div class="room-show-form">
         
+        <!-- フラッシュメッセージ(redirect_toで戻るため、@reservation.errorsが引き渡せない) -->
         <% if flash[:error].present? %>
-        <ul class="errors">
-          <% flash[:error].each do |e| %>
-            <li><%= e %></li>
-          <% end %>
-        </ul>
+          <ul class="errors text-danger">
+            <% flash[:error].each do |e| %>
+              <li><%= e %></li>
+            <% end %>
+          </ul>
         <% end %>
 
         <h4> ¥ <%= @room.price %> / 日</h4>
-          <%= form_with model: @reservation, url: confirm_reservations_path, local: true do |f| %>
+        <%= form_with model: @reservation, url: confirm_reservations_path, local: true do |f| %>
           <div>
             <%= f.label :check_in, "チェックイン" %><br>
             <%= f.date_field :check_in, class:"reservation-form" %>
@@ -43,9 +41,10 @@
             <%= f.hidden_field :room_id, value: @room.id %>
             <%= f.hidden_field :id %>
             <%= f.submit "確認画面へ", class:"btn btn-primary" %>
-          <% end %>
-        </div>
+        <% end %>
+
       </div>
     </div>
+
   </div>
 </div>

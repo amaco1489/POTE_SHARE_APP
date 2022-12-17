@@ -2,15 +2,15 @@
 <div class="container-field">
   <div class="row gx-0">
 
+    <!-- ナビゲーションメニュー -->
     <%= render "devise/shared/user_nav" %>
 
     <div class="col-lg-10 bg-secondary bg-opacity-10">
 
-      <div class="row gx-0 m-3 user-show" >
+      <!-- フラッシュメッセージ -->
+      <p class="notice"><%= notice %></p>
 
-        <% if flash[:notice].present? %>
-          <p class="notice"><%= notice %></p>
-        <% end %>
+      <div class="user-show row gx-0 m-3" >
 
         <h4>プロフィール</h4>
         <div><%= image_tag(@user.user_img_url, class:"user-img") %></div>

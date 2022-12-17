@@ -10,7 +10,7 @@ class User < ApplicationRecord
   mount_uploader :user_img, ImageUploader
 
   with_options uniqueness: true do
-    validates :name
+    validates :name, presence: true
     validates :email
   end
 

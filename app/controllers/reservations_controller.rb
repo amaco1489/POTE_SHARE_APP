@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
 
-  before_action :authenticate_user!, only: [:confirm]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @reservations = current_user.reservations.all
@@ -20,6 +20,7 @@ class ReservationsController < ApplicationController
     @reservation = current_user.reservations.new(reservation_params)
     @room = @reservation.room
     if @reservation.save
+      flash[:notice] = "予約が完了しました"
       redirect_to reservation_path(@reservation)
     else
       render room_path(@room)
