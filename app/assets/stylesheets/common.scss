@@ -1,0 +1,193 @@
+
+// -----   app   -----
+
+body{
+  margin: 0;
+  box-sizing: border-box;
+  color: #3333;
+  letter-spacing: 0.05em;
+}
+
+header {
+  color: #fff;
+  background-color: #111;
+  width: 100%;
+  height: 70px;
+  padding: 0 30px;
+}
+
+.header-search {
+  padding: 0.5em 0 0.5em 30px;
+  margin-right: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.form-group .bi {
+  position: absolute;
+  color: #111;
+  z-index: 5;
+  font-size: 20px;
+  margin: 7px 0 0 7px;
+}
+
+header .user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+header .btn {
+  opacity: 1!important;
+  width: 100px!important;
+  font-size: 15px;
+  margin: 0!important;
+}
+
+footer {
+  color: #fff;
+  background-color: #111;
+  font-size: 13px;
+  font-weight: lighter;
+  text-align: center;
+  width: 100%;
+  height: 180px;
+  display: flex;
+}
+
+footer p {
+  margin: auto;
+}
+
+
+// -----   common   -----
+
+
+h2, h3, h4, h5, h6 {
+  margin-bottom: 0!important;
+}
+
+.notice {
+  background-color: #d5eadb;
+  color: rgb(83, 110, 83);
+  text-align: center;
+}
+
+.btn-primary, .btn-secondary {
+  opacity: 0.75;
+  width: 100%;
+  margin-top: 1.5em;
+}
+
+label {
+  font-size: 14px;
+  line-height: 20px
+}
+
+
+// -----   current_user_menu   -----
+
+
+.reservation-confirm, .reservation-show, .user-edit, .post-room, .reservation-room, .new-room {
+  border: 1px solid #ced4da;
+  padding: 40px 30px;
+}
+
+h4, .reservation-confirm div, .reservation-show div, .user-show div, .user-edit .row {
+  border-bottom: 1px solid #eaedef;
+  padding: 15px 0;
+  line-height: 2;
+}
+
+.user-show, .user-edit, .new-room {
+  background-color: #fff;
+  max-width: 880px;
+  border: 1px solid #ced4da;
+  padding: 10px 50px;
+}
+
+.user-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.user-edit .user-img {
+  margin: 15px 0;
+}
+
+.post-room, .reservation-room {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  padding: 10px 30px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+.post-room .room-img, .reservation-room .room-img {
+  width: 100%;
+  height: 120px;
+  width: 200px;
+}
+
+.post-room tr, .reservation-room tr, .new-room tr {
+  border-bottom: 1px solid #eaedef;
+  line-height: 2;
+}
+thead {
+  text-align: center;
+}
+
+tbody tr {
+  margin: 10px 0;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: #f9fafb;
+}
+tbody td {
+  padding: 10px;
+}
+
+
+// -----   nav   -----
+
+
+.user-nav-lg {
+  height: 100vh;
+  padding: 15px;
+  border-right: 3px solid #ced4da;
+}
+
+.user-nav-lg .nav-item {
+  width: 100%;
+  font-size: 18px;
+  padding: 12px 5px;
+  text-align: center;
+}
+
+.user-nav-lg .active {
+  color: #4a90e2;
+  border-right: 5px solid #4a90e2;
+}
+
+.user-nav-md {
+  width: 100%;
+  font-size: 15px;
+  padding: 12px 5px 0;
+  border-bottom: 2px solid #ced4da;
+  line-height: 30px;
+}
+
+.user-nav-md .nav-item {
+  margin: auto;
+}
+
+.user-nav-md .active {
+  color: #4a90e2;
+  border-bottom: 3px solid #4a90e2;
+}

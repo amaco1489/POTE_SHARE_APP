@@ -1,0 +1,27 @@
+
+<div class="container-field">
+  <div class="row gx-0">
+
+    <!-- ナビゲーションメニュー -->
+    <%= render "devise/shared/user_nav" %>
+
+    <div class="col-lg-10 bg-secondary bg-opacity-10">
+
+      <!-- フラッシュメッセージ -->
+      <p class="notice"><%= notice %></p>
+
+      <div class="user-show row gx-0 m-3" >
+
+        <h4>プロフィール</h4>
+        <div><%= image_tag(@user.user_img_url, class:"user-img") %></div>
+        <div class="col-4">名前</div>
+        <div class="col-8"><%= @user.name %></div>
+        <div class="col-4">メールアドレス</div>
+        <div class="col-8"><%= @user.email %></div>
+        <div class="col-4">プロフィール</div>
+        <div class="col-8"><%= @user.profile %></div>
+
+      </div>
+    </div>
+  </div>
+</div>

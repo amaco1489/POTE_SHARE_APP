@@ -1,0 +1,58 @@
+
+<header>
+
+  <div class="d-flex justify-content-between align-items-center">
+    
+    <div class="d-flex  align-items-center">
+          
+      <div class="logo-img"><%= link_to image_tag("logo.png"), "/" %></div>
+
+      <%= form_with url:area_search_rooms_path, local: true, method: :get do |f| %>
+      <div class="form-group d-lg-block d-none">
+        <span class="input-group-addon"><i class="bi bi-geo-alt-fill"></i></span>
+        <%= f.text_field :keyword, placeholder: "エリア", class:"header-search" %>  
+      </div>
+      <% end %>
+         
+      <%= form_with url:search_rooms_path, local: true, method: :get do |f| %>
+      <div class="form-group d-lg-block d-none">
+        <span class="input-group-addon"><i class="bi bi-search"></i></span>
+        <%= f.text_field :keyword, placeholder: "キーワード", class:"header-search" %>
+      </div>
+      <% end %>
+
+    </div>
+      
+    <nav class="header-nav">
+
+      <% if user_signed_in? %>
+      <div class="d-flex align-items-center">
+        <%= "#{current_user.name} さん" %>            
+        <div class="dropdown">
+          <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#" >
+            <%= image_tag(current_user.user_img_url, class:"user-img", alt:"owner") %>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="dropdownmenulink">
+            <li><%= link_to "プロフィール", users_show_path, class:"dropdown-item" %></li>
+            <li><%= link_to "予約済みルーム", reservations_path, class:"dropdown-item" %></li>
+            <li><%= link_to "登録済みルーム", post_room_rooms_path, class:"dropdown-item" %></li>
+            <li><%= link_to "新規ルーム登録",  new_room_path, class:"dropdown-item" %></li>
+            <li><%= link_to "設定", edit_user_registration_path, class:"dropdown-item" %></li>
+            <li><%= link_to "TOP", root_path, class:"dropdown-item" %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
+          </ul>
+        </div>
+      </div>
+
+      <% else %>
+      <div class="d-grid gap-2 d-flex justify-content-end">
+        <%= link_to 'ログイン', new_user_session_path, class:"btn btn-primary" %>
+        <%= link_to '登録', new_user_registration_path, class:"btn btn-secondary" %>
+      </div>
+
+      <% end %>
+    </nav>
+
+  </div>
+
+</header>

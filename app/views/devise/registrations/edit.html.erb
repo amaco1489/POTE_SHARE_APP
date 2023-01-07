@@ -1,0 +1,62 @@
+
+<div class="container-field">
+  <div class="row gx-0">
+
+    <!-- ナビゲーションメニュー -->
+    <%= render "devise/shared/user_nav" %>
+
+    <div class="col-lg-10 bg-secondary bg-opacity-10">
+
+      <div class="user-edit gx-0 m-3">
+      
+        <h4>プロフィール編集</h4>
+        
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        
+          <!-- エラーメッセージ -->
+          <%= render "devise/shared/error_messages", resource: resource %>
+          
+          <div><%= image_tag(@user.user_img_url, class:"user-img") %></div>
+
+          <div class="row">
+            <div class="col-4"><%= f.label :user_img %></div>
+            <div class="col-8"><%= f.file_field :user_img, autofocus: true %></div>
+          </div>
+          <div class="row">
+            <div class="col-4"><%= f.label :name %></div>
+            <div class="col-8"><%= f.text_field :name, autofocus: true, autocomplete: "name", class:"device-form" %></div>
+          </div>
+          <div class="row">
+            <div class="col-4"><%= f.label :email %></div>
+            <div class="col-8"><%= f.email_field :email, autofocus: true, autocomplete: "email", class:"device-form" %></div>
+          </div>
+          <div class="row">
+            <div class="col-4"><%= f.label :profile %></div>
+            <div class="col-8"><%= f.text_area :profile, autofocus: true, autocomplete: "profile", class:"form-control", rows:"3" %></div>
+          </div>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+
+          <div class="row">
+            <div class="col-4"><%= f.label :password %><br/>（変更する場合のみ）</div>
+            <div class="col-8"><%= f.password_field :password, autocomplete: "new-password", class:"device-form" %></div>
+          </div>
+          <div class="row">
+            <div class="col-4"><%= f.label :password_confirmation %></div>
+            <div class="col-8"><%= f.password_field :password_confirmation, autocomplete: "new-password", class:"device-form" %></div>
+          </div>
+          <div class="row">
+            <div class="col-4"><%= f.label :current_password %></div>
+            <div class="col-8"><%= f.password_field :current_password, autocomplete: "current-password", class:"form-control" %></div>
+          </div>
+          <div class="actions">
+            <%= f.submit "更新する", class:"btn btn-primary mt-3" %>
+            <%= link_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-secondary mt-3" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

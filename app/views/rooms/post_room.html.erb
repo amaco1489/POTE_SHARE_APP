@@ -1,0 +1,40 @@
+
+<div class="container-field">
+  <div class="row gx-0">
+
+    <!-- ナビゲーションメニュー -->
+    <%= render "devise/shared/user_nav" %>
+
+    <div class="col-lg-10 bg-secondary bg-opacity-10">
+
+      <!-- フラッシュメッセージ -->
+      <p class="notice"><%= notice %></p>
+
+      <div class="post-room gx-0 m-3">
+        
+        <h4>登録済みルーム一覧</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>ルーム画像</th>
+              <th>ルーム名</th>
+              <th>一泊あたり</th>
+              <th>登録日時</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @room.each do |room| %>
+              <tr>
+                <td><%= link_to image_tag(room.room_img_url, class:"room-img"), room_path(room) %></td>
+                <td><%= link_to room.room_name, room_path(room) %></td>
+                <td>¥ <%= room.price %></td>
+                <td><%= room.created_at.to_s(:datetime_jp) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+</div>
